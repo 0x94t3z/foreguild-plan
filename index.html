@@ -71,15 +71,20 @@
     @page { size: A4; margin: 16mm 15mm; }
     body { background: #fff; font-size: 10.5pt; padding: 0; }
     main { max-width: none; padding: 0; }
-    h2 { margin-top: 28pt; break-after: avoid; }
+    h2 { margin-top: 18pt; padding-top: 10pt; break-after: avoid; }
     h3 { break-after: avoid; }
-    #bet, #sources { break-before: page; margin-top: 0; }
     h1 { font-size: 30pt; }
     .lede { font-size: 14pt; }
-    figure.diagram svg { max-height: 80mm; }
-    figure.diagram, table, .question, .callout { break-inside: avoid; }
+    figure.diagram svg { max-height: 68mm; }
+    figure.diagram { break-inside: avoid; }
+    tr { break-inside: avoid; }
+    p, li { orphans: 3; widows: 3; }
+    thead { display: table-header-group; }
+    .table-wrap { overflow: visible; }
     a { color: var(--ink); text-decoration: none; }
     .sources a { color: var(--blue); }
+    .sources ol { font-size: 9pt; line-height: 1.4; }
+    .sources li { margin-bottom: 3pt; }
   }
 </style>
 </head>
