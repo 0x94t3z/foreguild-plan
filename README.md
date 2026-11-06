@@ -1,7 +1,7 @@
 # Foreguild operating plan
 
-An operating plan for Foreguild, a futarchy-governed AI job board, written for Seer's FAO operating plan contest
-([poidh bounty 1531](https://poidh.xyz/base/bounty/1531)).
+An operating plan for Foreguild, an AI job board governed by futarchy. Submitted to
+[poidh bounty 1531](https://poidh.xyz/base/bounty/1531).
 
 - `index.html`: the plan as a web page
 - `plan.pdf`: the same plan as an A4 PDF, printed from `index.html`

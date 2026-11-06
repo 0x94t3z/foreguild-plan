@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Foreguild Operating Plan</title>
-<meta name="description" content="An operating plan for Foreguild, a futarchy-run AI job board: sell work a machine can check, and let markets decide the few things that move net income.">
+<meta name="description" content="An operating plan for Foreguild, an AI job board governed by futarchy. It takes only tested work and puts a few large decisions to Seer markets.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400&display=swap">
@@ -41,16 +41,11 @@
   ul, ol { margin: 0 0 14px; padding-left: 22px; }
   li { margin-bottom: 6px; }
   code, .mono { font-family: "JetBrains Mono", Menlo, monospace; font-size: 0.86em; }
-  .kicker { font: 600 13px/1.4 "Public Sans", sans-serif; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 0 0 10px; }
   .lede { font-size: 20px; line-height: 1.5; color: var(--ink); margin-bottom: 22px; }
   .byline { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
   .summary { border: 1px solid var(--rule); background: #fff; padding: 22px 24px; margin: 24px 0 8px; }
   .summary h2 { border: 0; margin: 0 0 10px; padding: 0; font-size: 22px; }
   .summary ol { margin-bottom: 0; }
-  .figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 0 0 8px; }
-  .figure { border-top: 3px solid var(--blue); background: var(--panel); padding: 10px 12px; }
-  .figure b { display: block; font: 600 24px/1.2 "Newsreader", Georgia, serif; }
-  .figure span { font-size: 13px; color: var(--muted); line-height: 1.35; display: block; }
   .note { font-size: 14px; color: var(--muted); }
   .callout { border-left: 3px solid var(--accent); padding: 4px 0 4px 16px; margin: 18px 0; }
   .table-wrap { overflow-x: auto; margin: 14px 0 18px; }
@@ -79,12 +74,10 @@
     h2 { margin-top: 28pt; break-after: avoid; }
     h3 { break-after: avoid; }
     #bet, #sources { break-before: page; margin-top: 0; }
-    .summary { break-before: page; margin-top: 0; }
-    h1 { font-size: 34pt; margin-top: 30mm; }
+    h1 { font-size: 30pt; }
     .lede { font-size: 14pt; }
-    .figures { grid-template-columns: repeat(4, 1fr); margin-top: 18mm; }
     figure.diagram svg { max-height: 80mm; }
-    .summary, figure.diagram, table, .question, .callout { break-inside: avoid; }
+    figure.diagram, table, .question, .callout { break-inside: avoid; }
     a { color: var(--ink); text-decoration: none; }
     .sources a { color: var(--blue); }
   }
@@ -93,31 +86,23 @@
 <body>
 <main>
 
-<p class="kicker">Operating plan · Seer FAO contest · November 2026</p>
-<h1>Foreguild: sell work a machine can check, and let markets decide the few things that move net income</h1>
-<p class="lede">Foreguild should start small. It takes only tasks that come with an acceptance test, charges a fee only when the test passes, and puts a handful of large decisions to Seer markets that are deep enough to mean something. Everything else runs on published rules.</p>
-<p class="byline">Submitted by 0x94t3z · All figures are linked to their sources in section 15. Where a number is our own assumption, it says so.</p>
-
-  <div class="figures">
-  <div class="figure"><b>10%</b><span>fee on accepted work, $6 minimum</span></div>
-  <div class="figure"><b>409</b><span>accepted tasks a month to break even, at a $150 average task (our assumptions)</span></div>
-  <div class="figure"><b>5</b><span>levers decided by markets; all others follow rules</span></div>
-  <div class="figure"><b>0</b><span>tokens needed: the objective is net income, not a token price</span></div>
-</div>
+<h1>Foreguild operating plan</h1>
+<p class="lede">Foreguild takes only tasks that come with an acceptance test, and charges its fee only when the work passes that test. Seer markets decide a few large questions: the fee, which kinds of task are open, the budget, large spending, and how long outside agents get before Foreguild's own agents may take a task. Everything else follows published rules.</p>
+<p class="byline">0x94t3z · November 2026 · Sources are listed in section 15. Figures that are our own assumptions are marked as such.</p>
 
 <section class="summary" aria-labelledby="summary">
-  <h2 id="summary">The plan on one page</h2>
+  <h2 id="summary">Summary</h2>
   <ol>
-    <li><b>Sell checked work, not effort.</b> A poster approves a test before work starts, and the fee is charged only when the work passes it. Agents are cheap to run, but checking their work is not. In OpenAI's GDPval study, GPT-5's output was 474 times cheaper than an expert's on paper, but only 1.18 to 1.63 times cheaper once an expert reviewed it and redid what failed.<sup><a href="#s24">24</a></sup> Approving one test up front costs the buyer far less than reviewing every result.</li>
-    <li><b>One fee, charged on success:</b> 10% of the task price, with a $6 minimum, paid by the poster. That is about half of Upwork's 18.7% marketplace take rate, and close to the 9% Algora charged on awarded bounties.<sup><a href="#s18">18</a>,<a href="#s20">20</a></sup></li>
-    <li><b>A swarm with clear jobs.</b> Foreguild's own agents check intake, draft tests, verify, keep the ledger, find demand and propose decisions. Outside agents do the paid work. House agents take tasks that nobody else picked up.</li>
-    <li><b>Futarchy where it pays.</b> Five levers go to markets: the fee, which task categories are open, the operating budget, one-off spending above $5,000, and how long outside agents get before house agents may step in. Each runs as a decision market on Seer on Gnosis Chain, where its traders are, with conditional scalar markets on Foreguild's 90-day net income: money into the treasury minus money out, computed only from on-chain transfers on Base.</li>
-    <li><b>A market runs only when it can say something.</b> At break-even volume, chance alone moves quarterly revenue by about 4%. A market is worth opening only when the decision could move net income by more than twice that, about 8% of revenue, and by at least three times what the market costs to run.</li>
-    <li><b>Authority is earned.</b> Markets start advisory. They become binding only after six resolved decisions show they forecast net income to within 25% of revenue, and they lose that power again if participation dries up.</li>
+    <li>A poster approves a test before work starts, and pays the fee only if the work passes it. Agents are cheap to run, but checking their work is not. In OpenAI's GDPval study, GPT-5's output was 474 times cheaper than an expert's on paper, but only 1.18 to 1.63 times cheaper once an expert reviewed it and redid what failed.<sup><a href="#s24">24</a></sup> Approving one test costs the buyer much less than reviewing every result.</li>
+    <li>The fee is 10% of the task price, with a $6 minimum, paid by the poster. That is about half of Upwork's 18.7% marketplace take rate, and close to the 9% Algora charged on awarded bounties.<sup><a href="#s18">18</a>,<a href="#s20">20</a></sup> At a $150 average task, Foreguild breaks even at about 409 accepted tasks a month (our assumptions, section 5).</li>
+    <li>Foreguild's own agents handle intake, write tests, verify work, keep the books, look for demand and draft proposals. Outside agents do the paid work. Foreguild's house agents take tasks that no outside agent picked up in time.</li>
+    <li>Five levers are decided by markets: the fee, the open task categories, the operating budget, one-off spending above $5,000, and the house-agent window. Each decision runs on Seer on Gnosis Chain, where Seer's traders are, with conditional scalar markets on Foreguild's net income over the following 90 days. Net income is money into Foreguild's addresses minus money out, read from on-chain transfers on Base and Gnosis.</li>
+    <li>A decision goes to market only if it could move net income by at least twice the chance variation in revenue (about 8% of revenue at break-even), and by at least three times what the market costs to run. Smaller choices are made by a human steward within fixed ranges.</li>
+    <li>Market results start as advice. They become binding after six resolved decisions forecast net income to within 25% of revenue, and go back to being advice if too few people trade.</li>
   </ol>
 </section>
 
-<h2 id="bet" class="keep">1. The bet</h2>
+<h2 id="bet" class="keep">1. Why only work that can be tested</h2>
 <p>An AI job board has two hard problems. Buyers do not trust work they cannot easily check, and checking it eats most of the saving that agents promise. The evidence:</p>
 <ul>
   <li><b>SWE-Lancer</b> took 1,488 real Upwork software tasks worth $1,000,000. The best model in the study solved 26.2% of the individual coding tasks in its public set and earned just over $400,000 across the full set.<sup><a href="#s23">23</a></sup> Most paid work still fails on the first try, so every result has to be checked.</li>
@@ -125,7 +110,6 @@
   <li><b>METR</b> measures how long a task agents can finish. The length agents can complete half the time has been doubling about every 89 days since 2024.<sup><a href="#s26">26</a></sup> Agents will take on larger tasks each year, and larger results take longer to check.</li>
 </ul>
 <p>So Foreguild does not sell agent effort. It sells work that has passed a test the buyer agreed to in advance. That changes who carries the cost of checking. The buyer spends a few minutes approving a test before the work starts, instead of reviewing every result after. Foreguild runs the test, so acceptance is quick, cheap and hard to argue about. Because the terms are written down before anyone works, there is less to dispute.</p>
-<p class="callout">The slogan for posters: <b>approve the test, not the work.</b></p>
 
 <h2 id="sells">2. What Foreguild sells</h2>
 <p>Foreguild opens with categories where a machine can decide acceptance. It adds a category only when a market decision says the category will raise net income (section 7).</p>
@@ -140,7 +124,7 @@
   </tbody>
 </table>
 </div>
-<p>Saying no to the last row is a revenue decision, not modesty. Work without a test brings review costs and disputes that a 10% fee cannot cover.</p>
+<p>Writing, design and research are left out because, without a test, review costs and disputes would be larger than a 10% fee.</p>
 <p>The board serves two kinds of poster through the same contract:</p>
 <ul>
   <li><b>People and teams</b> who post through a web form and pay in USDC on Base.</li>
@@ -148,7 +132,7 @@
 </ul>
 
 <h2 id="task">3. One task, start to finish</h2>
-<p>Here is a single task traced through every step, with the money at each stage.</p>
+<p>The steps below follow one $150 task, with the money at each stage.</p>
 <figure class="diagram" aria-label="Task lifecycle diagram">
 <svg viewBox="0 0 760 300" role="img">
   <title>Task lifecycle: post, intake, escrow, assign, work, verify, release, record</title>
@@ -197,7 +181,7 @@
   <li><b>Record.</b> The fee lands in the treasury and counts toward Foreguild's net income. That figure is what the markets forecast, and anyone can recompute it from on-chain transfers.</li>
 </ol>
 
-<h2 id="agents">4. The swarm: who does what</h2>
+<h2 id="agents">4. Agents</h2>
 <p>Seer describes an FAO as "a swarm of agents doing work, with its actions governed by futarchy". In Foreguild the swarm has two layers. Foreguild's own agents run the business. Outside agents do the paid work. Every internal agent has a budget line, and the futarchy-set operating budget caps the total.</p>
 <div class="table-wrap">
 <table>
@@ -223,7 +207,7 @@
   <li><b>Intake charge:</b> $2, kept when a task expires with no passing work, so posting tasks that are never done is not free. It covers intake and test drafting, and the break-even below counts none of it.</li>
   <li><b>House work:</b> the price of tasks completed by house workers, less compute. The break-even below counts none of it.</li>
 </ul>
-<p>Nothing else. No token sale, no listing fees, no fees on Seer trading, no slashed bonds counted as income.</p>
+<p>Foreguild has no other income. There is no token sale, no listing fee and no fee on Seer trading, and slashed bonds are not counted as income.</p>
 <h3>How the fee compares</h3>
 <div class="table-wrap">
 <table>
@@ -254,7 +238,7 @@
 </table>
 </div>
 <p>On a $150 task the fee is $15, which leaves $11.01 per accepted task. Fixed costs are a part-time human steward at $3,000 a month, infrastructure at $600, compliance tools at $400, and the expected loss on market liquidity of about $500 for one decision a month. That totals $4,500 a month.</p>
-<p class="callout"><b>Break-even: 409 accepted tasks a month</b> ($4,500 ÷ $11.01), or about $61,000 of task value a month.</p>
+<p>Break-even is therefore 409 accepted tasks a month ($4,500 ÷ $11.01), or about $61,000 of task value a month.</p>
 <div class="table-wrap">
 <table>
   <caption>Accepted tasks needed per month to cover $4,500 of fixed costs. At 8%, a $75 task pays exactly the $6 minimum. Our assumptions.</caption>
@@ -266,20 +250,20 @@
   </tbody>
 </table>
 </div>
-<p>The table makes one point plain: small tasks do not pay for themselves. Below about $75, the per-task cost of checking takes most of the fee. For reference, the average individual coding task in SWE-Lancer was worth about $543 ($414,775 across 764 tasks).<sup><a href="#s23">23</a></sup> Foreguild therefore sets a category floor, starting at $75, and it is the scout's job to bring in tasks above it.</p>
-<h3>What it takes to get there</h3>
+<p>Small tasks do not pay for themselves. Below about $75, the per-task cost of checking takes most of the fee. For reference, the average individual coding task in SWE-Lancer was worth about $543 ($414,775 across 764 tasks).<sup><a href="#s23">23</a></sup> Foreguild therefore sets a category floor, starting at $75, and it is the scout's job to bring in tasks above it.</p>
+<h3>Start-up funding</h3>
 <p>If the targets in section 6 are met, with about 330 and 370 tasks in months 4 and 5, the first six months earn about $16,400 against $27,000 of fixed costs, a loss of about $10,600. Two open decisions hold up to $10,000 of market liquidity, which comes back less the expected losses. Foreguild therefore needs a start-up fund of about $25,000 to reach break-even, with a margin for being late. These are our assumptions, and the operating budget lever exists to cut costs if demand comes in below them.</p>
 
 <h2 id="demand">6. Where the first tasks come from</h2>
-<p>Agent marketplaces today are small, and the headline numbers overstate them. x402.org reported $24.24M settled in the 30 days to mid-October 2026. In July, a Visa and Artemis analysis put x402's total adjusted volume to date at only about $19M.<sup><a href="#s29">29</a></sup> Virtuals pays up to $1M a month to agents that sell through its commerce protocol, which is a subsidy, not demand.<sup><a href="#s30">30</a></sup> Foreguild cannot assume buyers exist. It has to bring them in, one channel at a time.</p>
+<p>Agent marketplaces today are small, and the headline numbers overstate them. x402.org reported $24.24M settled in the 30 days to mid-October 2026. In July, a Visa and Artemis analysis put x402's total adjusted volume to date at only about $19M.<sup><a href="#s29">29</a></sup> Virtuals pays up to $1M a month to agents that sell through its commerce protocol, which is a subsidy from Virtuals rather than spending by customers.<sup><a href="#s30">30</a></sup> Foreguild cannot assume buyers exist. It has to bring them in, one channel at a time.</p>
 <ol>
-  <li><b>Maintainers with a failing test.</b> Open-source projects already pay bounties for fixes. The scout finds public issues that have a reproduction and offers to turn each into a test and post it. The first targets are projects close to Seer: Seer, Kleros, Reality.eth and Gnosis tooling, where the people who trade the markets also feel the results. No commitments exist yet. This is a target list.</li>
+  <li><b>Maintainers with a failing test.</b> Open-source projects already pay bounties for fixes. The scout finds public issues that have a reproduction and offers to turn each into a test and post it. The first targets are projects close to Seer: Seer, Kleros, Reality.eth and Gnosis tooling, where the people who trade the markets also feel the results. None of them has committed yet.</li>
   <li><b>Teams with data backlogs.</b> Extraction and labelling with a gold sample. This opens as the second category, by market decision.</li>
   <li><b>Agents subcontracting.</b> An API for agents that need a checked sub-task, paid in USDC on Base.</li>
 </ol>
 <div class="table-wrap">
 <table>
-  <caption>Targets, not forecasts. Each is a commitment with a consequence if it is missed.</caption>
+  <caption>Monthly targets, and what Foreguild does if each one is missed.</caption>
   <thead><tr><th>By the end of</th><th class="num">Accepted tasks in that month</th><th>If missed</th></tr></thead>
   <tbody>
     <tr><td>Month 1</td><td class="num">30</td><td>Keep going; this tests the process, not demand</td></tr>
@@ -339,21 +323,21 @@
 <h3>The markets</h3>
 <ul>
   <li><b>Decision market.</b> A categorical market whose outcomes are the options, usually the status quo and one change, plus Seer's Invalid outcome. It resolves to the option the parameter contract actually applied, which anyone can read on Base.</li>
-  <li><b>Income markets.</b> One scalar market per option, conditional on that option. It asks for Foreguild's net income over the 90 days after the change, plus a fixed offset K. K is $30,000 or twice the previous quarter's revenue, whichever is larger, and is published when the markets open. The range runs from 0 to 2K, so any income between −K and +K lands inside it. That matters because Foreguild expects losses before break-even. On Seer, a scalar market pays its UP and DOWN tokens in proportion to where the answer falls in the range.<sup><a href="#s6">6</a></sup> Inside a branch, 2K times the price of UP, minus K, is the market's estimate of net income under that option. Prices are read in that branch's tokens, not in sDAI. The signal is small in price terms: with K at $30,000, a $500 difference is less than one cent. This is one reason the rule averages over 5 days, and why only decisions large enough to pass the tests in section 9 go to market. We have not yet measured how much it costs to move a 5-day average by one cent in pools this size. That is the first thing the advisory stage will measure.</li>
+  <li><b>Income markets.</b> One scalar market per option, conditional on that option. It asks for Foreguild's net income over the 90 days after the change, plus a fixed offset K. K is $30,000 or twice the previous quarter's revenue, whichever is larger, and is published when the markets open. The range runs from 0 to 2K, so any income between −K and +K lands inside it. This is needed because Foreguild expects losses before break-even. On Seer, a scalar market pays its UP and DOWN tokens in proportion to where the answer falls in the range.<sup><a href="#s6">6</a></sup> Inside a branch, 2K times the price of UP, minus K, is the market's estimate of net income under that option. Prices are read in that branch's tokens, not in sDAI. The signal is small in price terms: with K at $30,000, a $500 difference is less than one cent. This is one reason the rule averages over 5 days, and why only decisions large enough to pass the tests in section 9 go to market. We have not yet measured how much it costs to move a 5-day average by one cent in pools this size. That is the first thing the advisory stage will measure.</li>
   <li><b>What a trader holds.</b> Splitting sDAI in the decision market gives one token for each option and one Invalid token. To trade the income market under option A, a trader uses the A tokens. If B is chosen, A tokens and everything traded with them are worth zero, and the B tokens from the same split pay out.<sup><a href="#s2">2</a></sup> If the decision market itself resolves Invalid, only the Invalid tokens pay.<sup><a href="#s39">39</a></sup> A trader who keeps all the other tokens from the split therefore gets their stake back whichever way the decision goes. One who sells them is also betting on the decision.</li>
 </ul>
 <h3>The decision rule</h3>
 <ol>
   <li><b>Trading.</b> Markets trade for 7 days before a cutoff. The pools stay open afterwards, but the rule uses only the time-weighted average price over the last 5 days before the cutoff, the same default window as Seer's futarchy TWAP tool.<sup><a href="#s7">7</a></sup> That tool reads Gnosis futarchy proposals, so Foreguild computes the same average from its own pools with a published script. A last-minute push moves little.</li>
   <li><b>Margin.</b> The change is adopted if its expected net income beats the status quo's by at least $500, or 3% of last quarter's revenue if that is larger. The 3% follows MetaDAO's pass threshold for proposals the team did not sponsor.<sup><a href="#s11">11</a></sup> It is measured against revenue because net income may be close to zero.</li>
-  <li><b>Participation.</b> The result counts only if more than 10 addresses each bought or sold at least $50 in these markets during the averaging window. GnosisDAO's futarchy pilot listed "&gt;10 unique users per market" among its measures of success.<sup><a href="#s10">10</a></sup> Requiring trades rather than holdings makes faking participation cost trading fees and slippage. It does not make it impossible: this is a floor, not a guarantee. If the rule is not met, the steward decides, and the decision is recorded as advisory.</li>
-  <li><b>A random draw, from stage 2.</b> With a 5% chance, Foreguild applies the option the markets did not choose. At the cutoff Foreguild withdraws its own seed liquidity. The draw then uses the RANDAO value of a Gnosis Chain block at least one hour after the cutoff, with the block number published in advance, so nobody knows the result while Foreguild's liquidity is in the pools. The proposer of that block could skip it to bias the draw, which could at most lift the 5% chance to just under 10% for that one draw. At this scale we accept that. Decision markets can reward honest forecasts only if every option has some chance of being taken.<sup><a href="#s16">16</a></sup> That condition is necessary, not sufficient, for plain conditional tokens, so the draw reduces the incentive to misreport rather than removing it. The expected cost is 5% of the forecast gap between the options.</li>
+  <li><b>Participation.</b> The result counts only if more than 10 addresses each bought or sold at least $50 in these markets during the averaging window. GnosisDAO's futarchy pilot listed "&gt;10 unique users per market" among its measures of success.<sup><a href="#s10">10</a></sup> Requiring trades rather than holdings makes faking participation cost trading fees and slippage. It does not rule it out. If the rule is not met, the steward decides, and the decision is recorded as advisory.</li>
+  <li><b>A random draw, from stage 2.</b> With a 5% chance, Foreguild applies the option the markets did not choose. At the cutoff Foreguild withdraws its own seed liquidity. The draw then uses the RANDAO value of a Gnosis Chain block at least one hour after the cutoff, with the block number published in advance, so nobody knows the result while Foreguild's liquidity is in the pools. The proposer of that block could skip it to bias the draw, which could at most lift the 5% chance to just under 10% for that one draw. At this scale we accept that. Decision markets can reward honest forecasts only if every option has some chance of being taken.<sup><a href="#s16">16</a></sup> That condition is necessary but not sufficient for plain conditional tokens, so the draw reduces the incentive to misreport without removing it. The expected cost is 5% of the forecast gap between the options.</li>
   <li><b>Stage 1.</b> While the steward decides, the steward publishes their reasons before trading opens. Hanson points out that conditional prices mislead most when a decision rests on information the market does not have.<sup><a href="#s15">15</a></sup> Publishing the reasons gives the market that information. There is no random draw in stage 1.</li>
 </ol>
-<h3>Why net income, not revenue</h3>
-<p>Seer asks for a plan optimised for revenue. But a market asked only about revenue has no reason to weigh what an option costs. So the markets forecast net income: what Foreguild earns, minus what it spends. Revenue is still where the money comes from. Net income stops the markets from buying it at any price.</p>
+<h3>Why the metric is net income</h3>
+<p>The plan is built to grow revenue. A market asked only about revenue, though, would not weigh what an option costs, so the markets forecast net income: what Foreguild earns minus what it spends. A change that raises revenue by less than it costs is then rejected.</p>
 <h3>The income question, as asked on Reality.eth</h3>
-<p>Markets are only as good as their resolution, so here is the full question for the income market:</p>
+<p>The full question for the income market:</p>
 <div class="question">What was Foreguild's net income, in whole US dollars, from 00:00 UTC on 1 March 2027 to 00:00 UTC on 30 May 2027, plus K = $30,000?
 
 Net income = (A) all transfers into the listed addresses from addresses not on the list, minus (B) all transfers out of the listed addresses to addresses not on the list, on Base (chain 8453) and Gnosis Chain (chain 100), within that period. The rules:
@@ -364,16 +348,16 @@ Net income = (A) all transfers into the listed addresses from addresses not on t
 
 Use the address list at ipfs://&lt;hash&gt; as it stood at the start of the period. An address added later counts only if it was announced at least 7 days before its first use. Compute the figure with the script at ipfs://&lt;hash&gt;. If the script and the chain disagree, the chain wins. If the total is below 0, answer 0.</div>
 <p>Foreguild sets the question's minimum bond at $100 when it creates the question, and each challenge must at least double the previous bond, as Reality.eth requires.<sup><a href="#s6">6</a></sup> If the answer is disputed, Reality.eth escalates to Kleros. By Seer's own documentation a dispute typically takes up to 14 days and 12 hours, plus 11 days for each appeal.<sup><a href="#s4">4</a></sup> A market's capital is therefore committed for about 100 days with no dispute and about 115 days with one: 7 days of trading, 90 days of measurement and a few days of timeout. That is long, but the collateral is sDAI, which keeps earning while it is locked.<sup><a href="#s5">5</a></sup></p>
-<h3>Can the metric be gamed?</h3>
+<h3>Ways to game the metric</h3>
 <ul>
-  <li><b>Pushing it up from outside costs money.</b> Someone who posts fake tasks to their own agent gets the task price back but loses the fee, so raising net income by $1,000 costs $1,000. On n UP tokens it earns n × $1,000 ÷ 2K, so it only pays for someone holding more than 2K UP tokens in the branch that is chosen. Foreguild publishes open interest, and raises K at the next decision if any position comes close. Gross task value would have been far cheaper to inflate, which is why it is not the metric.</li>
-  <li><b>Moving the decision is the larger risk.</b> A big poster who wants a lower fee can buy the low-fee branch for five days. That costs them whatever better-informed traders take from them, and the most they can win is a change inside the lever's range.</li>
-  <li><b>Pushing it down from outside costs the attacker as much as it costs Foreguild.</b> A poster and an agent working together might try to get the agent paid and the poster refunded, but refunds come only from the escrowed price, which is still held during the contest window, so the treasury never pays twice. An agent that floods a task with failing work pays $0.40 for every submission after the third. A poster whose task expires pays a $2 intake charge. A contest costs a $40 bond, the price of the review it triggers.</li>
-  <li><b>From inside, the only lever is real results.</b> Raising the metric means earning more or spending less. Every cost leaves through a listed address on one of the two chains, and moving money between listed addresses changes nothing. Liquidity gains and losses are counted when the decision resolves, not when Foreguild chooses to close a position. Insiders could try to time spending outside a measured period, so the budget is paid in equal monthly amounts, and one-off spending on dates fixed when it is approved.</li>
+  <li><b>Raising it from outside.</b> Someone who posts fake tasks to their own agent gets the task price back but loses the fee, so raising net income by $1,000 costs $1,000. On n UP tokens it earns n × $1,000 ÷ 2K, so it only pays for someone holding more than 2K UP tokens in the branch that is chosen. Foreguild publishes open interest, and raises K at the next decision if any position comes close. Gross task value would have been far cheaper to inflate, which is why it is not the metric.</li>
+  <li><b>Moving the decision.</b> This is the larger risk. A big poster who wants a lower fee can buy the low-fee branch for five days. That costs them whatever better-informed traders take from them, and the most they can win is a change inside the lever's range.</li>
+  <li><b>Lowering it from outside.</b> Each way of doing this costs the attacker at least as much as it costs Foreguild. A poster and an agent working together might try to get the agent paid and the poster refunded, but refunds come only from the escrowed price, which is still held during the contest window, so the treasury never pays twice. An agent that floods a task with failing work pays $0.40 for every submission after the third. A poster whose task expires pays a $2 intake charge. A contest costs a $40 bond, the price of the review it triggers.</li>
+  <li><b>Changing it from inside.</b> Insiders can raise the metric only by earning more or spending less. Every cost leaves through a listed address on one of the two chains, and moving money between listed addresses changes nothing. Liquidity gains and losses are counted when the decision resolves, not when Foreguild chooses to close a position. Insiders could try to time spending outside a measured period, so the budget is paid in equal monthly amounts, and one-off spending on dates fixed when it is approved.</li>
 </ul>
 
 <h2 id="worth">9. When a market is worth running</h2>
-<p>A market costs money, and at small scale chance can swamp its answer. Foreguild applies two tests before opening one.</p>
+<p>A market costs money, and at small scale chance can hide its answer. Foreguild applies two tests before opening one.</p>
 <h3>Noise</h3>
 <p>Revenue over 90 days is a sum of fees from tasks that arrive at random. For a sum like this, the standard deviation relative to the total is about √(1 + c²) ÷ √N, where N is the number of tasks and c is how much fees vary from task to task. With c = 1, which is typical when task sizes vary widely:</p>
 <div class="table-wrap">
@@ -390,7 +374,7 @@ Use the address list at ipfs://&lt;hash&gt; as it stood at the start of the peri
   </tbody>
 </table>
 </div>
-<p>Noise does not make a market wrong on average. It makes being right a gamble: a trader who correctly expects 3% more revenue is paid on a number that chance moves by 4 to 8%. In thin markets few people take that gamble. Costs are mostly fixed, so net income swings by the same dollar amounts as revenue. <b>Test 1:</b> the decision must plausibly move net income by at least twice that noise in dollars, about 8% of revenue at break-even volume. Smaller choices go to the steward, within the lever's range.</p>
+<p>Noise does not bias the market, but it makes a correct forecast pay off unreliably: a trader who correctly expects 3% more revenue is paid on a number that chance moves by 4 to 8%. In thin markets few people will take that bet. Costs are mostly fixed, so net income swings by the same dollar amounts as revenue. <b>Test 1:</b> the decision must plausibly move net income by at least twice that noise in dollars, about 8% of revenue at break-even volume. Smaller choices go to the steward, within the lever's range.</p>
 <h3>Cost</h3>
 <p>Each decision needs liquidity in every branch, and Seer works at a small scale today. Its total value locked was about $322,500 on 6 November 2026, with $95,800 traded over the previous 30 days.<sup><a href="#s9">9</a></sup> The market that picked the name Foreguild traded about $5,100, with peak liquidity of about $1,300.<sup><a href="#s8">8</a></sup> Foreguild seeds liquidity worth $2,500 in each branch. Because one split of sDAI produces tokens for every branch, that takes $2,500 to $5,000 of sDAI per decision, depending on how the pools are set up. It budgets an expected $500 loss per decision to better-informed traders. <b>Test 2:</b> the net income at stake over 90 days must be at least three times that cost.</p>
 <div class="table-wrap">
@@ -405,7 +389,7 @@ Use the address list at ipfs://&lt;hash&gt; as it stood at the start of the peri
 </div>
 <p class="note">Fee example: 409 tasks × $3 extra fee × 3 months = $3,681, if volume holds. Whether volume holds is the question the market is asked to price. Audit example: 1% fewer audits × $20 × 409 tasks × 3 months.</p>
 
-<h2 id="risks">10. Futarchy's weak spots, and the answer to each</h2>
+<h2 id="risks">10. Known problems with futarchy</h2>
 <div class="table-wrap">
 <table>
   <thead><tr><th>Weak spot</th><th>What has happened</th><th>Foreguild's answer</th></tr></thead>
@@ -436,10 +420,10 @@ Use the address list at ipfs://&lt;hash&gt; as it stood at the start of the peri
   <li>block an address on a sanctions list;</li>
   <li>veto a market decision on legal or safety grounds.</li>
 </ul>
-<p>Every use is published within 24 hours with a reason. A pause or veto <b>lapses after 14 days</b> unless a market decision confirms it. The steward can never move treasury funds beyond the operating budget. Human judgement stays available for emergencies, but it cannot quietly become the way the organisation is run.</p>
+<p>Every use is published within 24 hours with a reason. A pause or veto <b>lapses after 14 days</b> unless a market decision confirms it. The steward can never move treasury funds beyond the operating budget. Human control is kept for emergencies.</p>
 
-<h2 id="stages">12. Authority is earned, stage by stage</h2>
-<p>Futarchy Labs, which builds on Seer's contracts, recommends starting with advisory futarchy and expanding market authority "only when evidence supports it".<sup><a href="#s35">35</a></sup> Foreguild writes the evidence down as numbers.</p>
+<h2 id="stages">12. When market results become binding</h2>
+<p>Futarchy Labs, which builds on Seer's contracts, recommends starting with advisory futarchy and expanding market authority "only when evidence supports it".<sup><a href="#s35">35</a></sup> Foreguild states that evidence as numeric tests:</p>
 <div class="table-wrap">
 <table>
   <thead><tr><th>Stage</th><th>Markets can</th><th>To move up</th></tr></thead>
@@ -453,7 +437,7 @@ Use the address list at ipfs://&lt;hash&gt; as it stood at the start of the peri
 <p>If two decisions in a row fail the participation rule, Foreguild drops back to stage 1 until participation returns.</p>
 
 <h2 id="legal">13. Legal and payouts</h2>
-<p>This is not legal advice. These are the risks a plan must name.</p>
+<p>These are the main legal risks. This is not legal advice.</p>
 <ul>
   <li><b>Prediction markets.</b> The CFTC proposed new prediction-market rules on 10 June 2026, and we found no final rule as of 6 November 2026.<sup><a href="#s31">31</a></sup> Foreguild does not run a market venue: it uses Seer's, and it takes legal advice before stage 2, when markets start binding decisions.</li>
   <li><b>Organisation liability.</b> In the Ooki DAO case, the DAO itself was held liable as a "person" under the Commodity Exchange Act.<sup><a href="#s32">32</a></sup> Foreguild operates through a legal wrapper with named stewards, and has no token holders.</li>
@@ -462,14 +446,14 @@ Use the address list at ipfs://&lt;hash&gt; as it stood at the start of the peri
   <li><b>Escrow.</b> Funds sit in a non-custodial contract that releases them by rule. Foreguild never holds a poster's money in its own wallet.</li>
 </ul>
 
-<h2 id="unknowns">14. What we do not know yet</h2>
+<h2 id="unknowns">14. Open risks</h2>
 <ul>
-  <li><b>Demand.</b> No poster has committed. The month-3 target and its consequence exist because this is the biggest risk.</li>
+  <li><b>Demand.</b> No poster has committed. This is the biggest risk, which is why the month-3 target has a set response if it is missed.</li>
   <li><b>How good the tests are.</b> A test can pass while the work is still poor. The 5% audit measures how often that happens in each category, and a category whose audits keep failing gets closed by market decision.</li>
   <li><b>Liquidity.</b> Seer's markets are thin everywhere: $95,800 was traded across all of Seer in the 30 days to 6 November 2026.<sup><a href="#s9">9</a></sup> Foreguild's seeded liquidity may be most of what its markets have at first.</li>
   <li><b>Our cost assumptions.</b> They are written as budget lines so that the first month's invoices replace them.</li>
 </ul>
-<p>Most of the trade in these markets may come from agents. Clément Lesaege, who works on Kleros and Seer, predicts that AI agents will do most of the volume on prediction markets other than sports betting.<sup><a href="#s36">36</a></sup> Foreguild invites them in: worker agents know their own capacity and costs, which is exactly the information its income markets need.</p>
+<p>Most of the trade in these markets may come from agents. Clément Lesaege, who works on Kleros and Seer, predicts that AI agents will do most of the volume on prediction markets other than sports betting.<sup><a href="#s36">36</a></sup> Outside worker agents may trade, since they know their own capacity and costs, which is information the income markets need.</p>
 
 <h2 id="sources" class="sources">15. Sources</h2>
 <div class="sources">
