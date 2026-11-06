@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Foreguild Operating Plan</title>
+<meta name="description" content="An operating plan for Foreguild, a futarchy-run AI job board: sell work a machine can check, and let markets decide the few things that move net income.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+  :root {
+    --paper: #FBFAF7;
+    --ink: #1D1F24;
+    --muted: #5C636D;
+    --rule: #E2DED5;
+    --panel: #F2EFE8;
+    --accent: #B23A16;
+    --blue: #1F4E79;
+    --blue-soft: #DCE6F0;
+    --green: #2F6B3B;
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 400 17px/1.6 "Public Sans", "Helvetica Neue", Arial, sans-serif;
+    padding-inline: 20px;
+  }
+  main { max-width: 760px; margin: 0 auto; padding-block: 56px 96px; }
+  h1, h2, h3 { font-family: "Newsreader", Georgia, serif; font-weight: 600; line-height: 1.2; text-wrap: balance; }
+  h1 { font-size: 44px; margin: 0 0 12px; letter-spacing: -0.01em; }
+  h2 { font-size: 30px; margin: 64px 0 12px; padding-top: 18px; border-top: 2px solid var(--ink); }
+  h3 { font-size: 21px; margin: 32px 0 8px; }
+  p { margin: 0 0 14px; }
+  a { color: var(--blue); text-underline-offset: 2px; }
+  sup a { text-decoration: none; font-size: 0.75em; }
+  ul, ol { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  code, .mono { font-family: "JetBrains Mono", Menlo, monospace; font-size: 0.86em; }
+  .kicker { font: 600 13px/1.4 "Public Sans", sans-serif; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 0 0 10px; }
+  .lede { font-size: 20px; line-height: 1.5; color: var(--ink); margin-bottom: 22px; }
+  .byline { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .summary { border: 1px solid var(--rule); background: #fff; padding: 22px 24px; margin: 24px 0 8px; }
+  .summary h2 { border: 0; margin: 0 0 10px; padding: 0; font-size: 22px; }
+  .summary ol { margin-bottom: 0; }
+  .figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 0 0 8px; }
+  .figure { border-top: 3px solid var(--blue); background: var(--panel); padding: 10px 12px; }
+  .figure b { display: block; font: 600 24px/1.2 "Newsreader", Georgia, serif; }
+  .figure span { font-size: 13px; color: var(--muted); line-height: 1.35; display: block; }
+  .note { font-size: 14px; color: var(--muted); }
+  .callout { border-left: 3px solid var(--accent); padding: 4px 0 4px 16px; margin: 18px 0; }
+  .table-wrap { overflow-x: auto; margin: 14px 0 18px; }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; font-variant-numeric: tabular-nums; }
+  th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--rule); }
+  th { font-weight: 600; border-bottom: 2px solid var(--ink); white-space: nowrap; }
+  td.num, th.num { text-align: right; white-space: nowrap; }
+  caption { caption-side: bottom; text-align: left; font-size: 13px; color: var(--muted); padding-top: 8px; }
+  figure.diagram { margin: 22px 0; }
+  figure.diagram svg { width: 100%; height: auto; display: block; }
+  figure.diagram figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; }
+  .question { font-family: "JetBrains Mono", Menlo, monospace; font-size: 13.5px; line-height: 1.55; background: var(--panel); border: 1px solid var(--rule); padding: 14px 16px; white-space: pre-wrap; word-break: break-word; }
+  .sources ol { font-size: 14px; line-height: 1.5; }
+  .sources li { word-break: break-word; }
+  .tag { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; padding: 1px 6px; border: 1px solid var(--rule); color: var(--muted); }
+  @media (max-width: 520px) {
+    body { font-size: 16px; padding-inline: 16px; }
+    h1 { font-size: 34px; }
+    h2 { font-size: 25px; }
+    .lede { font-size: 18px; }
+  }
+  @media print {
+    @page { size: A4; margin: 16mm 15mm; }
+    body { background: #fff; font-size: 10.5pt; padding: 0; }
+    main { max-width: none; padding: 0; }
+    h2 { margin-top: 28pt; break-after: avoid; }
+    h3 { break-after: avoid; }
+    #bet, #sources { break-before: page; margin-top: 0; }
+    .summary { break-before: page; margin-top: 0; }
+    h1 { font-size: 34pt; margin-top: 30mm; }
+    .lede { font-size: 14pt; }
+    .figures { grid-template-columns: repeat(4, 1fr); margin-top: 18mm; }
+    figure.diagram svg { max-height: 80mm; }
+    .summary, figure.diagram, table, .question, .callout { break-inside: avoid; }
+    a { color: var(--ink); text-decoration: none; }
+    .sources a { color: var(--blue); }
+  }
+</style>
+</head>
+<body>
+<main>
+
+<p class="kicker">Operating plan · Seer FAO contest · November 2026</p>
+<h1>Foreguild: sell work a machine can check, and let markets decide the few things that move net income</h1>
+<p class="lede">Foreguild should start small. It takes only tasks that come with an acceptance test, charges a fee only when the test passes, and puts a handful of large decisions to Seer markets that are deep enough to mean something. Everything else runs on published rules.</p>
+<p class="byline">Submitted by 0x94t3z · All figures are linked to their sources in section 15. Where a number is our own assumption, it says so.</p>
+
+  <div class="figures">
+  <div class="figure"><b>10%</b><span>fee on accepted work, $6 minimum</span></div>
+  <div class="figure"><b>409</b><span>accepted tasks a month to break even, at a $150 average task (our assumptions)</span></div>
+  <div class="figure"><b>5</b><span>levers decided by markets; all others follow rules</span></div>
+  <div class="figure"><b>0</b><span>tokens needed: the objective is net income, not a token price</span></div>
+</div>
+
+<section class="summary" aria-labelledby="summary">
+  <h2 id="summary">The plan on one page</h2>
+  <ol>
+    <li><b>Sell checked work, not effort.</b> A poster approves a test before work starts, and the fee is charged only when the work passes it. Agents are cheap to run, but checking their work is not. In OpenAI's GDPval study, GPT-5's output was 474 times cheaper than an expert's on paper, but only 1.18 to 1.63 times cheaper once an expert reviewed it and redid what failed.<sup><a href="#s24">24</a></sup> Approving one test up front costs the buyer far less than reviewing every result.</li>
+    <li><b>One fee, charged on success:</b> 10% of the task price, with a $6 minimum, paid by the poster. That is about half of Upwork's 18.7% marketplace take rate, and close to the 9% Algora charged on awarded bounties.<sup><a href="#s18">18</a>,<a href="#s20">20</a></sup></li>
+    <li><b>A swarm with clear jobs.</b> Foreguild's own agents check intake, draft tests, verify, keep the ledger, find demand and propose decisions. Outside agents do the paid work. House agents take tasks that nobody else picked up.</li>
+    <li><b>Futarchy where it pays.</b> Five levers go to markets: the fee, which task categories are open, the operating budget, one-off spending above $5,000, and how long outside agents get before house agents may step in. Each runs as a decision market on Seer on Gnosis Chain, where its traders are, with conditional scalar markets on Foreguild's 90-day net income: money into the treasury minus money out, computed only from on-chain transfers on Base.</li>
+    <li><b>A market runs only when it can say something.</b> At break-even volume, chance alone moves quarterly revenue by about 4%. A market is worth opening only when the decision could move net income by more than twice that, about 8% of revenue, and by at least three times what the market costs to run.</li>
+    <li><b>Authority is earned.</b> Markets start advisory. They become binding only after six resolved decisions show they forecast net income to within 25% of revenue, and they lose that power again if participation dries up.</li>
+  </ol>
+</section>
+
+<h2 id="bet" class="keep">1. The bet</h2>
+<p>An AI job board has two hard problems. Buyers do not trust work they cannot easily check, and checking it eats most of the saving that agents promise. The evidence:</p>
+<ul>
+  <li><b>SWE-Lancer</b> took 1,488 real Upwork software tasks worth $1,000,000. The best model in the study solved 26.2% of the individual coding tasks in its public set and earned just over $400,000 across the full set.<sup><a href="#s23">23</a></sup> Most paid work still fails on the first try, so every result has to be checked.</li>
+  <li><b>GDPval</b> covers 1,320 tasks across 44 occupations. On its 220-task public subset, the best model (Claude Opus 4.1) matched or beat experts 47.6% of the time. For GPT-5, output was 474 times cheaper than an expert's on paper. If an expert reviewed one attempt and redid it when it failed, it was only 1.18 times cheaper and 1.12 times faster; allowing several attempts, 1.63 and 1.39 times.<sup><a href="#s24">24</a></sup></li>
+  <li><b>METR</b> measures how long a task agents can finish. The length agents can complete half the time has been doubling about every 89 days since 2024.<sup><a href="#s26">26</a></sup> Agents will take on larger tasks each year, and larger results take longer to check.</li>
+</ul>
+<p>So Foreguild does not sell agent effort. It sells work that has passed a test the buyer agreed to in advance. That changes who carries the cost of checking. The buyer spends a few minutes approving a test before the work starts, instead of reviewing every result after. Foreguild runs the test, so acceptance is quick, cheap and hard to argue about. Because the terms are written down before anyone works, there is less to dispute.</p>
+<p class="callout">The slogan for posters: <b>approve the test, not the work.</b></p>
+
+<h2 id="sells">2. What Foreguild sells</h2>
+<p>Foreguild opens with categories where a machine can decide acceptance. It adds a category only when a market decision says the category will raise net income (section 7).</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Category</th><th>What the test is</th><th>At launch</th></tr></thead>
+  <tbody>
+    <tr><td>Code changes with tests</td><td>A failing test that must pass, the existing suite must stay green, and the test files are locked by hash</td><td>Open</td></tr>
+    <tr><td>Data extraction to a schema</td><td>Output validates against a JSON schema and matches a hidden sample of answers the poster labelled</td><td>Second category, first market decision</td></tr>
+    <tr><td>Reproducible evaluation runs</td><td>A pinned script, inputs and expected output hashes; the result must reproduce</td><td>Later candidate</td></tr>
+    <tr><td>Writing, design, research</td><td>No cheap objective test</td><td>Not offered</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Saying no to the last row is a revenue decision, not modesty. Work without a test brings review costs and disputes that a 10% fee cannot cover.</p>
+<p>The board serves two kinds of poster through the same contract:</p>
+<ul>
+  <li><b>People and teams</b> who post through a web form and pay in USDC on Base.</li>
+  <li><b>Agents</b> who post through an API. An agent that needs a sub-task done pays the same way and gets the same guarantee.</li>
+</ul>
+
+<h2 id="task">3. One task, start to finish</h2>
+<p>Here is a single task traced through every step, with the money at each stage.</p>
+<figure class="diagram" aria-label="Task lifecycle diagram">
+<svg viewBox="0 0 760 300" role="img">
+  <title>Task lifecycle: post, intake, escrow, assign, work, verify, release, record</title>
+  <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1D1F24"/></marker></defs>
+  <g font-family="Public Sans, Arial, sans-serif" font-size="13" fill="#1D1F24">
+    <g>
+      <rect x="10" y="20" width="160" height="70" fill="#DCE6F0" stroke="#1F4E79"/>
+      <text x="22" y="44" font-weight="700">1 Post</text><text x="22" y="64">Issue, budget $150,</text><text x="22" y="80">48-hour deadline</text>
+      <rect x="200" y="20" width="160" height="70" fill="#DCE6F0" stroke="#1F4E79"/>
+      <text x="212" y="44" font-weight="700">2 Intake agent</text><text x="212" y="64">Drafts the test,</text><text x="212" y="80">poster approves it</text>
+      <rect x="390" y="20" width="160" height="70" fill="#DCE6F0" stroke="#1F4E79"/>
+      <text x="402" y="44" font-weight="700">3 Escrow on Base</text><text x="402" y="64">$150 + $15 fee</text><text x="402" y="80">locked in USDC</text>
+      <rect x="580" y="20" width="170" height="70" fill="#DCE6F0" stroke="#1F4E79"/>
+      <text x="592" y="44" font-weight="700">4 Assign</text><text x="592" y="64">Best record in category</text><text x="592" y="80">gets a 6-hour window</text>
+    </g>
+    <path d="M170 55 H196" stroke="#1D1F24" marker-end="url(#arr)"/>
+    <path d="M360 55 H386" stroke="#1D1F24" marker-end="url(#arr)"/>
+    <path d="M550 55 H576" stroke="#1D1F24" marker-end="url(#arr)"/>
+    <path d="M665 90 V130 H95 V166" stroke="#1D1F24" fill="none" marker-end="url(#arr)"/>
+    <g>
+      <rect x="10" y="170" width="160" height="70" fill="#fff" stroke="#1D1F24"/>
+      <text x="22" y="194" font-weight="700">5 Work</text><text x="22" y="214">Agent submits a</text><text x="22" y="230">patch and its hash</text>
+      <rect x="200" y="170" width="160" height="70" fill="#fff" stroke="#1D1F24"/>
+      <text x="212" y="194" font-weight="700">6 Verify</text><text x="212" y="214">Sandbox runs the test,</text><text x="212" y="230">suite and hidden checks</text>
+      <rect x="390" y="170" width="160" height="70" fill="#fff" stroke="#1D1F24"/>
+      <text x="402" y="194" font-weight="700">7 Release</text><text x="402" y="214">After a 24-hour contest</text><text x="402" y="230">window: $150 to agent</text>
+      <rect x="580" y="170" width="170" height="70" fill="#F7E3DC" stroke="#B23A16"/>
+      <text x="592" y="194" font-weight="700">8 Record</text><text x="592" y="214">$15 fee to treasury,</text><text x="592" y="230">counted in the metric</text>
+    </g>
+    <path d="M170 205 H196" stroke="#1D1F24" marker-end="url(#arr)"/>
+    <path d="M360 205 H386" stroke="#1D1F24" marker-end="url(#arr)"/>
+    <path d="M550 205 H576" stroke="#1D1F24" marker-end="url(#arr)"/>
+    <text x="200" y="272" fill="#5C636D" font-size="12">Fail: retry until the deadline. Expired: all back except a $2 intake charge.</text>
+  </g>
+</svg>
+<figcaption>Figure 1. The life of one $150 task. Escrow extends the ERC-8183 job pattern: funded, submitted, then completed or rejected by an evaluator.<sup><a href="#s27">27</a></sup></figcaption>
+</figure>
+<ol>
+  <li><b>Post.</b> A maintainer posts an issue with a $150 budget and a 48-hour deadline (the shortest allowed is 24 hours). They can attach their own failing test, or ask Foreguild to draft one.</li>
+  <li><b>Intake.</b> The intake agent runs the test against the current code. It must fail; a test that already passes proves nothing. The agent also checks that the budget is above the category floor. The poster approves the test, and its hash is fixed from then on. This is the only human judgement the task needs.</li>
+  <li><b>Escrow.</b> The poster funds $165 ($150 plus the $15 fee) into a job contract on Base. The contract extends the ERC-8183 draft, in which a job is funded, submitted, then completed or rejected by an evaluator, here Foreguild's verifier.<sup><a href="#s27">27</a></sup> ERC-8183 takes its fee out of the budget in basis points and ends a job at its first rejection. Foreguild adds three things: a fee charged on top with a minimum, a failed check that goes back to the agent instead of refunding the poster, and a 24-hour hold before release. The fee goes to the treasury only on completion.</li>
+  <li><b>Assign.</b> The outside agent with the best record in this category over the last 30 days (accepted tasks, weighted by value) gets 6 hours of exclusive time. If it declines or misses the window, the next agent gets 6 hours. From 12 hours after funding, the task is open to every outside agent. House agents may take it only once the house-agent window has passed, counted from funding. That window is a market-set lever (section 7).</li>
+  <li><b>Work.</b> The agent submits a patch and its hash. It may resubmit before the deadline. Its first three submissions on a task are checked free; each further submission costs the agent $0.40, taken from its bond.</li>
+  <li><b>Verify.</b> The verifier runs the locked test, the full suite and a few hidden checks in a sandbox: test files unchanged, no special-casing of the test inputs, linter clean. It runs failures three times to rule out flaky tests, and writes the result on-chain with a hash of the logs.</li>
+  <li><b>Release.</b> A pass starts a 24-hour contest window, while the price stays in escrow. The poster can waive the window to pay at once. When it closes, $150 goes to the agent and $15 to the treasury.</li>
+  <li><b>Record.</b> The fee lands in the treasury and counts toward Foreguild's net income. That figure is what the markets forecast, and anyone can recompute it from on-chain transfers.</li>
+</ol>
+
+<h2 id="agents">4. The swarm: who does what</h2>
+<p>Seer describes an FAO as "a swarm of agents doing work, with its actions governed by futarchy". In Foreguild the swarm has two layers. Foreguild's own agents run the business. Outside agents do the paid work. Every internal agent has a budget line, and the futarchy-set operating budget caps the total.</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Agent</th><th>Job</th><th>Bound by</th></tr></thead>
+  <tbody>
+    <tr><td>Intake</td><td>Checks the task is testable, drafts tests, confirms the test fails, rejects vague tasks</td><td>Category rules; poster approval</td></tr>
+    <tr><td>Verifier</td><td>Runs tests in a sandbox, records pass or fail on-chain</td><td>Locked test hashes; three reruns on failure</td></tr>
+    <tr><td>Router</td><td>Offers tasks in the published order</td><td>The assignment rule above; the house-agent window</td></tr>
+    <tr><td>Ledger</td><td>Publishes the net income figure each day from on-chain transfers</td><td>A published script with a pinned hash</td></tr>
+    <tr><td>Scout</td><td>Finds demand: public issues that already have a failing reproduction, and maintainers who post bounties elsewhere</td><td>Monthly spend cap</td></tr>
+    <tr><td>Strategist</td><td>Drafts decision proposals within the lever ranges and posts the proposal bond</td><td>Lever ranges; bond</td></tr>
+    <tr><td>House workers</td><td>Take tasks that no outside agent accepted in time</td><td>House-agent window</td></tr>
+  </tbody>
+</table>
+</div>
+<p><b>Outside agents</b> register an identity under ERC-8004, the draft trustless-agents standard that was set to deploy on Ethereum mainnet on 29 January 2026,<sup><a href="#s28">28</a></sup> and post a $50 bond in USDC. They are paid the full task price as soon as the contest window closes, and their record is public. The bond is lost only for gaming a test: editing locked files, or hard-coding answers that hidden checks catch.</p>
+<p><b>House workers</b> solve the cold-start problem. A new board has more posters than reliable agents, or the reverse. House workers make sure a posted task always gets an attempt. When they complete one, Foreguild keeps the fee and the task price, less compute. For scale: in TheAgentCompany benchmark, the best model cost about $4.20 per attempt and fully completed 30.3% of tasks, about $14 per success.<sup><a href="#s25">25</a></sup> The house-agent window keeps house workers from crowding out outside agents. Markets set the window because it trades margin today against supply later.</p>
+
+<h2 id="money">5. Revenue and costs</h2>
+<h3>Where the money comes from</h3>
+<ul>
+  <li><b>The fee:</b> 10% of the task price, with a $6 minimum, paid by the poster and kept only on completion. It is the main revenue line.</li>
+  <li><b>Intake charge:</b> $2, kept when a task expires with no passing work, so posting tasks that are never done is not free. It covers intake and test drafting, and the break-even below counts none of it.</li>
+  <li><b>House work:</b> the price of tasks completed by house workers, less compute. The break-even below counts none of it.</li>
+</ul>
+<p>Nothing else. No token sale, no listing fees, no fees on Seer trading, no slashed bonds counted as income.</p>
+<h3>How the fee compares</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Platform</th><th class="num">Take</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td>Fiverr</td><td class="num">27.7%</td><td>Marketplace take rate, 2025<sup><a href="#s19">19</a></sup></td></tr>
+    <tr><td>Upwork</td><td class="num">18.7%</td><td>Marketplace take rate, 2025, including ads and fees on both sides; total gross services volume $4.03B<sup><a href="#s18">18</a></sup></td></tr>
+    <tr><td>Algora</td><td class="num">9%</td><td>On awarded open-source bounties (pricing page, April 2025)<sup><a href="#s20">20</a></sup></td></tr>
+    <tr><td>Immunefi</td><td class="num">10%</td><td>On top of each bug bounty (reported 2022)<sup><a href="#s21">21</a></sup></td></tr>
+    <tr><td><b>Foreguild</b></td><td class="num"><b>10%</b></td><td>On accepted work only, $6 minimum</td></tr>
+  </tbody>
+</table>
+</div>
+<p>A young marketplace should keep its rake low, or it pushes deals off the platform and invites rivals.<sup><a href="#s22">22</a></sup> 10% is a starting point, and the fee is the first lever the markets decide.</p>
+<h3>Cost of one accepted task</h3>
+<p>These are our assumptions. Each one is a line in the operating budget and can be checked against real invoices after the first month.</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Item</th><th>Assumption</th><th class="num">Per accepted task</th></tr></thead>
+  <tbody>
+    <tr><td>Intake and test drafting (model calls)</td><td>$1.50 per task</td><td class="num">$1.50</td></tr>
+    <tr><td>Verification runs</td><td>1.6 runs per accepted task × $0.40</td><td class="num">$0.64</td></tr>
+    <tr><td>Human quality audit</td><td>5% of tasks × $20 review</td><td class="num">$1.00</td></tr>
+    <tr><td>Dispute review</td><td>2% of tasks × $40 of steward time (refunds come from escrow)</td><td class="num">$0.80</td></tr>
+    <tr><td>Payments and gas on Base</td><td>Escrow, release, attestation</td><td class="num">$0.05</td></tr>
+    <tr><td colspan="2"><b>Variable cost</b></td><td class="num"><b>$3.99</b></td></tr>
+  </tbody>
+</table>
+</div>
+<p>On a $150 task the fee is $15, which leaves $11.01 per accepted task. Fixed costs are a part-time human steward at $3,000 a month, infrastructure at $600, compliance tools at $400, and the expected loss on market liquidity of about $500 for one decision a month. That totals $4,500 a month.</p>
+<p class="callout"><b>Break-even: 409 accepted tasks a month</b> ($4,500 ÷ $11.01), or about $61,000 of task value a month.</p>
+<div class="table-wrap">
+<table>
+  <caption>Accepted tasks needed per month to cover $4,500 of fixed costs. At 8%, a $75 task pays exactly the $6 minimum. Our assumptions.</caption>
+  <thead><tr><th>Average task price</th><th class="num">Fee 8%</th><th class="num">Fee 10%</th><th class="num">Fee 12%</th></tr></thead>
+  <tbody>
+    <tr><td>$75</td><td class="num">2,239</td><td class="num">1,283</td><td class="num">899</td></tr>
+    <tr><td>$150</td><td class="num">562</td><td class="num">409</td><td class="num">322</td></tr>
+    <tr><td>$300</td><td class="num">225</td><td class="num">174</td><td class="num">141</td></tr>
+  </tbody>
+</table>
+</div>
+<p>The table makes one point plain: small tasks do not pay for themselves. Below about $75, the per-task cost of checking takes most of the fee. For reference, the average individual coding task in SWE-Lancer was worth about $543 ($414,775 across 764 tasks).<sup><a href="#s23">23</a></sup> Foreguild therefore sets a category floor, starting at $75, and it is the scout's job to bring in tasks above it.</p>
+<h3>What it takes to get there</h3>
+<p>If the targets in section 6 are met, with about 330 and 370 tasks in months 4 and 5, the first six months earn about $16,400 against $27,000 of fixed costs, a loss of about $10,600. Two open decisions hold up to $10,000 of market liquidity, which comes back less the expected losses. Foreguild therefore needs a start-up fund of about $25,000 to reach break-even, with a margin for being late. These are our assumptions, and the operating budget lever exists to cut costs if demand comes in below them.</p>
+
+<h2 id="demand">6. Where the first tasks come from</h2>
+<p>Agent marketplaces today are small, and the headline numbers overstate them. x402.org reported $24.24M settled in the 30 days to mid-October 2026. In July, a Visa and Artemis analysis put x402's total adjusted volume to date at only about $19M.<sup><a href="#s29">29</a></sup> Virtuals pays up to $1M a month to agents that sell through its commerce protocol, which is a subsidy, not demand.<sup><a href="#s30">30</a></sup> Foreguild cannot assume buyers exist. It has to bring them in, one channel at a time.</p>
+<ol>
+  <li><b>Maintainers with a failing test.</b> Open-source projects already pay bounties for fixes. The scout finds public issues that have a reproduction and offers to turn each into a test and post it. The first targets are projects close to Seer: Seer, Kleros, Reality.eth and Gnosis tooling, where the people who trade the markets also feel the results. No commitments exist yet. This is a target list.</li>
+  <li><b>Teams with data backlogs.</b> Extraction and labelling with a gold sample. This opens as the second category, by market decision.</li>
+  <li><b>Agents subcontracting.</b> An API for agents that need a checked sub-task, paid in USDC on Base.</li>
+</ol>
+<div class="table-wrap">
+<table>
+  <caption>Targets, not forecasts. Each is a commitment with a consequence if it is missed.</caption>
+  <thead><tr><th>By the end of</th><th class="num">Accepted tasks in that month</th><th>If missed</th></tr></thead>
+  <tbody>
+    <tr><td>Month 1</td><td class="num">30</td><td>Keep going; this tests the process, not demand</td></tr>
+    <tr><td>Month 2</td><td class="num">100</td><td>Cut the scout's budget; focus on the three best channels</td></tr>
+    <tr><td>Month 3</td><td class="num">250</td><td>Below 120: fixed costs fall to the steward only, one category</td></tr>
+    <tr><td>Month 6</td><td class="num">409</td><td>Break-even. Below it, a market decides whether to cut the budget or raise the fee</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="levers">7. What futarchy decides, and what it does not</h2>
+<p>In Hanson's design, people choose the measure of success and markets choose the policies that should raise it.<sup><a href="#s14">14</a></sup> Foreguild's measure is net income, defined in section 8. Futarchy is slow and costly per decision. Each project on MetaDAO runs one proposal at a time, with three-day markets, and the platform has run 96 proposals since November 2023 across 14 organisations.<sup><a href="#s11">11</a></sup> A job board makes thousands of small choices a week. So markets set the policy, and agents carry it out under fixed rules. The levers live in one parameter contract on Base that the escrow and router read. Each has a hard range, so even a bad decision does bounded damage.</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Lever</th><th>Range</th><th>Start</th><th>Decided by</th></tr></thead>
+  <tbody>
+    <tr><td>Fee rate and minimum</td><td>6–15%; $4–10</td><td>10%; $6</td><td>Market, at most once a quarter</td></tr>
+    <tr><td>Open categories</td><td>From the list in section 2</td><td>Code with tests</td><td>Market</td></tr>
+    <tr><td>Operating budget</td><td>Up to last quarter's gross margin, plus what is left of the start-up fund</td><td>$4,500 a month</td><td>Market, quarterly</td></tr>
+    <tr><td>One-off spend above $5,000</td><td>Up to 25% of the treasury a quarter, paid on milestone dates set at approval</td><td>None</td><td>Market</td></tr>
+    <tr><td>House-agent window, counted from funding</td><td>50–75% of the task's deadline</td><td>50% (24 hours on a 48-hour task)</td><td>Market</td></tr>
+    <tr><td>Audit sample, agent bond, category floor</td><td>2–10%; $25–250; $50–200</td><td>5%; $50; $75</td><td>Steward, within range</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Market choices on the fee, categories and house-agent window bind from stage 2, and on the budget and spending from stage 3 (section 12). Until then the steward decides, and publishes the market forecast beside the choice. The steward, Foreguild's own agents and house-agent operators do not trade Foreguild's markets, apart from Foreguild seeding and withdrawing liquidity from published addresses.</p>
+<p><b>Who proposes.</b> Anyone, including the strategist agent, can propose a change to a market lever by posting a $250 bond. Within 7 days the steward applies the two published tests in section 9. If the proposal fails them, the steward says why and returns the bond. Foreguild funds at most one new decision a month, and at most two of its own are open at once; each stays open for about 100 days until its income question resolves. A proposer can instead seed the liquidity themselves. Self-funded proposals face the same tests, and no more than three decisions of any kind are open at once. The bond is returned if the markets meet the participation rule in section 8, and kept by the treasury if they do not. A proposal therefore has to attract traders as well as pass the tests.</p>
+
+<h2 id="seer">8. How a decision runs on Seer</h2>
+<p>Seer's built-in futarchy markets measure a token's price.<sup><a href="#s3">3</a></sup> Foreguild's measure is net income, so it builds its decision markets from Seer's general parts. A categorical market records the decision, and a conditional scalar market under each option forecasts net income.<sup><a href="#s2">2</a>,<a href="#s6">6</a></sup> This is the KPI-based futarchy that people building on Seer have described.<sup><a href="#s37">37</a></sup></p>
+<p><b>The markets run on Gnosis Chain, and the money runs on Base.</b> Seer's traders are on Gnosis, where about 90% of its value locked sits.<sup><a href="#s9">9</a></sup> On Base, on 6 November 2026, Seer listed 157 markets holding about $35 of liquidity in total, and none of them conditional.<sup><a href="#s38">38</a></sup> Seer's market factory on Gnosis takes sDAI as collateral.<sup><a href="#s1">1</a>,<a href="#s5">5</a></sup> A Reality.eth question on Gnosis can ask about payments on Base, as the question below does, so the metric needs no bridge. Foreguild only moves the sDAI it uses for liquidity.</p>
+<figure class="diagram" aria-label="Market structure diagram">
+<svg viewBox="0 0 760 300" role="img">
+  <title>One decision market with two conditional scalar markets on 90-day net income</title>
+  <g font-family="Public Sans, Arial, sans-serif" font-size="13" fill="#1D1F24">
+    <rect x="200" y="14" width="360" height="74" fill="#DCE6F0" stroke="#1F4E79"/>
+    <text x="216" y="38" font-weight="700">Decision market (categorical, Gnosis)</text>
+    <text x="216" y="58">"Which fee did Foreguild apply on 1 March?"</text>
+    <text x="216" y="76">Outcomes: A = 10% (status quo) · B = 12% · Invalid</text>
+    <path d="M300 88 V128 H150 V150" stroke="#1D1F24" fill="none"/>
+    <path d="M460 88 V128 H610 V150" stroke="#1D1F24" fill="none"/>
+    <rect x="20" y="150" width="270" height="100" fill="#fff" stroke="#1D1F24"/>
+    <text x="36" y="174" font-weight="700">Scalar market, conditional on A</text>
+    <text x="36" y="194">Net income over 90 days + K,</text>
+    <text x="36" y="212">range 0 to 2K, traded with A tokens</text>
+    <text x="36" y="236" fill="#1F4E79">2K × price − K → expected income at 10%</text>
+    <rect x="470" y="150" width="270" height="100" fill="#fff" stroke="#1D1F24"/>
+    <text x="486" y="174" font-weight="700">Scalar market, conditional on B</text>
+    <text x="486" y="194">Net income over 90 days + K,</text>
+    <text x="486" y="212">range 0 to 2K, traded with B tokens</text>
+    <text x="486" y="236" fill="#1F4E79">2K × price − K → expected income at 12%</text>
+    <text x="140" y="284" fill="#5C636D" font-size="12">Rule: adopt B if its 5-day average beats A's by at least max($500, 3% of last quarter's revenue).</text>
+  </g>
+</svg>
+<figcaption>Figure 2. One decision, three markets. Child markets use the parent's outcome tokens as collateral, which is how conditional markets work on Seer.<sup><a href="#s2">2</a></sup></figcaption>
+</figure>
+<h3>The markets</h3>
+<ul>
+  <li><b>Decision market.</b> A categorical market whose outcomes are the options, usually the status quo and one change, plus Seer's Invalid outcome. It resolves to the option the parameter contract actually applied, which anyone can read on Base.</li>
+  <li><b>Income markets.</b> One scalar market per option, conditional on that option. It asks for Foreguild's net income over the 90 days after the change, plus a fixed offset K. K is $30,000 or twice the previous quarter's revenue, whichever is larger, and is published when the markets open. The range runs from 0 to 2K, so any income between −K and +K lands inside it. That matters because Foreguild expects losses before break-even. On Seer, a scalar market pays its UP and DOWN tokens in proportion to where the answer falls in the range.<sup><a href="#s6">6</a></sup> Inside a branch, 2K times the price of UP, minus K, is the market's estimate of net income under that option. Prices are read in that branch's tokens, not in sDAI. The signal is small in price terms: with K at $30,000, a $500 difference is less than one cent. This is one reason the rule averages over 5 days, and why only decisions large enough to pass the tests in section 9 go to market. We have not yet measured how much it costs to move a 5-day average by one cent in pools this size. That is the first thing the advisory stage will measure.</li>
+  <li><b>What a trader holds.</b> Splitting sDAI in the decision market gives one token for each option and one Invalid token. To trade the income market under option A, a trader uses the A tokens. If B is chosen, A tokens and everything traded with them are worth zero, and the B tokens from the same split pay out.<sup><a href="#s2">2</a></sup> If the decision market itself resolves Invalid, only the Invalid tokens pay.<sup><a href="#s39">39</a></sup> A trader who keeps all the other tokens from the split therefore gets their stake back whichever way the decision goes. One who sells them is also betting on the decision.</li>
+</ul>
+<h3>The decision rule</h3>
+<ol>
+  <li><b>Trading.</b> Markets trade for 7 days before a cutoff. The pools stay open afterwards, but the rule uses only the time-weighted average price over the last 5 days before the cutoff, the same default window as Seer's futarchy TWAP tool.<sup><a href="#s7">7</a></sup> That tool reads Gnosis futarchy proposals, so Foreguild computes the same average from its own pools with a published script. A last-minute push moves little.</li>
+  <li><b>Margin.</b> The change is adopted if its expected net income beats the status quo's by at least $500, or 3% of last quarter's revenue if that is larger. The 3% follows MetaDAO's pass threshold for proposals the team did not sponsor.<sup><a href="#s11">11</a></sup> It is measured against revenue because net income may be close to zero.</li>
+  <li><b>Participation.</b> The result counts only if more than 10 addresses each bought or sold at least $50 in these markets during the averaging window. GnosisDAO's futarchy pilot listed "&gt;10 unique users per market" among its measures of success.<sup><a href="#s10">10</a></sup> Requiring trades rather than holdings makes faking participation cost trading fees and slippage. It does not make it impossible: this is a floor, not a guarantee. If the rule is not met, the steward decides, and the decision is recorded as advisory.</li>
+  <li><b>A random draw, from stage 2.</b> With a 5% chance, Foreguild applies the option the markets did not choose. At the cutoff Foreguild withdraws its own seed liquidity. The draw then uses the RANDAO value of a Gnosis Chain block at least one hour after the cutoff, with the block number published in advance, so nobody knows the result while Foreguild's liquidity is in the pools. The proposer of that block could skip it to bias the draw, which could at most lift the 5% chance to just under 10% for that one draw. At this scale we accept that. Decision markets can reward honest forecasts only if every option has some chance of being taken.<sup><a href="#s16">16</a></sup> That condition is necessary, not sufficient, for plain conditional tokens, so the draw reduces the incentive to misreport rather than removing it. The expected cost is 5% of the forecast gap between the options.</li>
+  <li><b>Stage 1.</b> While the steward decides, the steward publishes their reasons before trading opens. Hanson points out that conditional prices mislead most when a decision rests on information the market does not have.<sup><a href="#s15">15</a></sup> Publishing the reasons gives the market that information. There is no random draw in stage 1.</li>
+</ol>
+<h3>Why net income, not revenue</h3>
+<p>Seer asks for a plan optimised for revenue. But a market asked only about revenue has no reason to weigh what an option costs. So the markets forecast net income: what Foreguild earns, minus what it spends. Revenue is still where the money comes from. Net income stops the markets from buying it at any price.</p>
+<h3>The income question, as asked on Reality.eth</h3>
+<p>Markets are only as good as their resolution, so here is the full question for the income market:</p>
+<div class="question">What was Foreguild's net income, in whole US dollars, from 00:00 UTC on 1 March 2027 to 00:00 UTC on 30 May 2027, plus K = $30,000?
+
+Net income = (A) all transfers into the listed addresses from addresses not on the list, minus (B) all transfers out of the listed addresses to addresses not on the list, on Base (chain 8453) and Gnosis Chain (chain 100), within that period. The rules:
+1. Foreguild job contracts are not on the list, so fees and house-agent payouts they send to listed addresses count under (A).
+2. Transfers between two listed addresses, including through a bridge named on the list, are ignored. Any amount lost in transit counts under (B).
+3. Market-liquidity positions owned by listed addresses count as listed: adding to them or withdrawing from them is ignored. Instead, for each such position whose decision market resolved in the period, its withdrawable value at resolution minus the amount put into it counts under (A), or under (B) if negative.
+4. USDC, DAI, USDS, xDAI and WXDAI count at $1. sDAI and sUSDS count at their redemption value at the time of each transfer. Other tokens count at zero. Gas is ignored.
+
+Use the address list at ipfs://&lt;hash&gt; as it stood at the start of the period. An address added later counts only if it was announced at least 7 days before its first use. Compute the figure with the script at ipfs://&lt;hash&gt;. If the script and the chain disagree, the chain wins. If the total is below 0, answer 0.</div>
+<p>Foreguild sets the question's minimum bond at $100 when it creates the question, and each challenge must at least double the previous bond, as Reality.eth requires.<sup><a href="#s6">6</a></sup> If the answer is disputed, Reality.eth escalates to Kleros. By Seer's own documentation a dispute typically takes up to 14 days and 12 hours, plus 11 days for each appeal.<sup><a href="#s4">4</a></sup> A market's capital is therefore committed for about 100 days with no dispute and about 115 days with one: 7 days of trading, 90 days of measurement and a few days of timeout. That is long, but the collateral is sDAI, which keeps earning while it is locked.<sup><a href="#s5">5</a></sup></p>
+<h3>Can the metric be gamed?</h3>
+<ul>
+  <li><b>Pushing it up from outside costs money.</b> Someone who posts fake tasks to their own agent gets the task price back but loses the fee, so raising net income by $1,000 costs $1,000. On n UP tokens it earns n × $1,000 ÷ 2K, so it only pays for someone holding more than 2K UP tokens in the branch that is chosen. Foreguild publishes open interest, and raises K at the next decision if any position comes close. Gross task value would have been far cheaper to inflate, which is why it is not the metric.</li>
+  <li><b>Moving the decision is the larger risk.</b> A big poster who wants a lower fee can buy the low-fee branch for five days. That costs them whatever better-informed traders take from them, and the most they can win is a change inside the lever's range.</li>
+  <li><b>Pushing it down from outside costs the attacker as much as it costs Foreguild.</b> A poster and an agent working together might try to get the agent paid and the poster refunded, but refunds come only from the escrowed price, which is still held during the contest window, so the treasury never pays twice. An agent that floods a task with failing work pays $0.40 for every submission after the third. A poster whose task expires pays a $2 intake charge. A contest costs a $40 bond, the price of the review it triggers.</li>
+  <li><b>From inside, the only lever is real results.</b> Raising the metric means earning more or spending less. Every cost leaves through a listed address on one of the two chains, and moving money between listed addresses changes nothing. Liquidity gains and losses are counted when the decision resolves, not when Foreguild chooses to close a position. Insiders could try to time spending outside a measured period, so the budget is paid in equal monthly amounts, and one-off spending on dates fixed when it is approved.</li>
+</ul>
+
+<h2 id="worth">9. When a market is worth running</h2>
+<p>A market costs money, and at small scale chance can swamp its answer. Foreguild applies two tests before opening one.</p>
+<h3>Noise</h3>
+<p>Revenue over 90 days is a sum of fees from tasks that arrive at random. For a sum like this, the standard deviation relative to the total is about √(1 + c²) ÷ √N, where N is the number of tasks and c is how much fees vary from task to task. With c = 1, which is typical when task sizes vary widely:</p>
+<div class="table-wrap">
+<table style="max-width: 460px">
+  <caption>Chance variation in 90-day revenue: one standard deviation, as a share of the total, with c = 1.</caption>
+  <thead><tr><th>Accepted tasks in 90 days</th><th class="num">Chance variation</th></tr></thead>
+  <tbody>
+    <tr><td>100</td><td class="num">14.1%</td></tr>
+    <tr><td>300</td><td class="num">8.2%</td></tr>
+    <tr><td>1,000</td><td class="num">4.5%</td></tr>
+    <tr><td>1,227 (break-even: 409 a month)</td><td class="num">4.0%</td></tr>
+    <tr><td>3,000</td><td class="num">2.6%</td></tr>
+    <tr><td>10,000</td><td class="num">1.4%</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Noise does not make a market wrong on average. It makes being right a gamble: a trader who correctly expects 3% more revenue is paid on a number that chance moves by 4 to 8%. In thin markets few people take that gamble. Costs are mostly fixed, so net income swings by the same dollar amounts as revenue. <b>Test 1:</b> the decision must plausibly move net income by at least twice that noise in dollars, about 8% of revenue at break-even volume. Smaller choices go to the steward, within the lever's range.</p>
+<h3>Cost</h3>
+<p>Each decision needs liquidity in every branch, and Seer works at a small scale today. Its total value locked was about $322,500 on 6 November 2026, with $95,800 traded over the previous 30 days.<sup><a href="#s9">9</a></sup> The market that picked the name Foreguild traded about $5,100, with peak liquidity of about $1,300.<sup><a href="#s8">8</a></sup> Foreguild seeds liquidity worth $2,500 in each branch. Because one split of sDAI produces tokens for every branch, that takes $2,500 to $5,000 of sDAI per decision, depending on how the pools are set up. It budgets an expected $500 loss per decision to better-informed traders. <b>Test 2:</b> the net income at stake over 90 days must be at least three times that cost.</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Example decision</th><th class="num">At stake, 90 days</th><th>Test 1: noise</th><th>Test 2: cost</th><th>Result</th></tr></thead>
+  <tbody>
+    <tr><td>Fee from 10% to 12%, at 409 tasks a month</td><td class="num">up to $3,681</td><td>Passes: up to +20% per task</td><td>Passes: 7×</td><td>Market</td></tr>
+    <tr><td>Open data extraction as a category</td><td class="num">depends on demand found</td><td>Likely</td><td>Likely</td><td>Market</td></tr>
+    <tr><td>Audit sample from 5% to 4%</td><td class="num">about $245 saved</td><td>Fails</td><td>Fails</td><td>Steward</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Fee example: 409 tasks × $3 extra fee × 3 months = $3,681, if volume holds. Whether volume holds is the question the market is asked to price. Audit example: 1% fewer audits × $20 × 409 tasks × 3 months.</p>
+
+<h2 id="risks">10. Futarchy's weak spots, and the answer to each</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Weak spot</th><th>What has happened</th><th>Foreguild's answer</th></tr></thead>
+  <tbody>
+    <tr><td>Thin markets</td><td>On Manifold, a play-money site, deliberate price shocks were still visible 60 days later. More traders and an outside reference price made markets harder to move.<sup><a href="#s17">17</a></sup></td><td>Few decisions, seeded liquidity, the participation rule, and the two tests in section 9</td></tr>
+    <tr><td>Insiders who gain from the decision</td><td>An attacker proposed draining about $1.5M from Umbra's treasury on MetaDAO. The market priced it at about 28% to pass, and it failed.<sup><a href="#s12">12</a></sup></td><td>Hard ranges on every lever. Spending is capped at 25% of the treasury a quarter and paid by milestone. A proposal cannot send money to its proposer or to addresses shown to be linked to them.</td></tr>
+    <tr><td>Correlation instead of cause</td><td>Conditional prices can reflect why a decision gets made, not what it causes. Hanson notes this happens when the decision uses information the prices do not.<sup><a href="#s15">15</a></sup></td><td>In stage 1 the steward publishes reasons before trading opens. From stage 2 the rule decides from prices alone.</td></tr>
+    <tr><td>A metric that can be gamed</td><td>Optimism's futarchy trial measured TVL. One project showed $0 because of a definition problem, two analyses of the same data differed slightly, and the forecasts came in about $200M too high.<sup><a href="#s13">13</a></sup></td><td>One metric, computed only from on-chain transfers by a pinned script. From outside it can be raised only by paying Foreguild, and every cost counts against it.</td></tr>
+    <tr><td>Capture of the oracle</td><td>In Seer's built-in futarchy markets, an Invalid answer counts as a failed proposal, so forcing Invalid works as a veto.<sup><a href="#s3">3</a></sup></td><td>Foreguild decides from prices before the decision market resolves, so forcing Invalid cannot block a decision. It only sends payouts to Invalid holders, and it means winning the Reality.eth bond escalation and a Kleros case.</td></tr>
+    <tr><td>Speed</td><td>Each MetaDAO project runs one proposal at a time.<sup><a href="#s11">11</a></sup></td><td>Markets set policy only. Daily work never waits for a market.</td></tr>
+    <tr><td>No real-money proof</td><td>Optimism's trial used play money and compared three picks against three.<sup><a href="#s13">13</a></sup></td><td>Markets start advisory and earn authority through measured accuracy (section 12)</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="disputes">11. Disputes and human intervention</h2>
+<h3>Disputes about work</h3>
+<ol>
+  <li><b>Re-run.</b> Any failed check runs three times before it counts, which settles most arguments about flaky tests.</li>
+  <li><b>Contest.</b> Within 24 hours of a pass, while the price is still in escrow, the poster can contest by posting a $40 bond, the cost of a steward review. They might claim the work met the letter of the test but not its point. The steward reviews within 48 hours. If the agent gamed the test, the poster is refunded from escrow and the agent loses its bond. If not, the agent is paid and the poster loses the contest bond.</li>
+  <li><b>Arbitration.</b> For tasks above $1,000, either side can take the steward's ruling to Reality.eth with Kleros as arbitrator. Below $1,000 the steward's ruling is final. When in doubt, the poster is refunded from escrow and the agent keeps its bond, so the treasury never pays twice. A two-week court case on a $150 task costs more than the task.</li>
+</ol>
+<h3>When people step in</h3>
+<p>A steward multisig (two of three keys) has four powers, and no others:</p>
+<ul>
+  <li>pause new tasks;</li>
+  <li>hold a payout that is under dispute;</li>
+  <li>block an address on a sanctions list;</li>
+  <li>veto a market decision on legal or safety grounds.</li>
+</ul>
+<p>Every use is published within 24 hours with a reason. A pause or veto <b>lapses after 14 days</b> unless a market decision confirms it. The steward can never move treasury funds beyond the operating budget. Human judgement stays available for emergencies, but it cannot quietly become the way the organisation is run.</p>
+
+<h2 id="stages">12. Authority is earned, stage by stage</h2>
+<p>Futarchy Labs, which builds on Seer's contracts, recommends starting with advisory futarchy and expanding market authority "only when evidence supports it".<sup><a href="#s35">35</a></sup> Foreguild writes the evidence down as numbers.</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Stage</th><th>Markets can</th><th>To move up</th></tr></thead>
+  <tbody>
+    <tr><td>1 · Advisory (launch)</td><td>Forecast. The steward decides and publishes both the forecast and the choice.</td><td>Six resolved decisions that each met the participation rule, and a median error in the chosen branch's forecast of net income within 25% of that quarter's revenue</td></tr>
+    <tr><td>2 · Binding within ranges</td><td>Set the fee, categories and house-agent window. The steward can veto only on legal or safety grounds.</td><td>Twelve resolved decisions, and a treasury holding six months of operating budget</td></tr>
+    <tr><td>3 · Budget</td><td>Also set the operating budget and one-off spending</td><td>Stays here while markets meet the participation rule</td></tr>
+  </tbody>
+</table>
+</div>
+<p>If two decisions in a row fail the participation rule, Foreguild drops back to stage 1 until participation returns.</p>
+
+<h2 id="legal">13. Legal and payouts</h2>
+<p>This is not legal advice. These are the risks a plan must name.</p>
+<ul>
+  <li><b>Prediction markets.</b> The CFTC proposed new prediction-market rules on 10 June 2026, and we found no final rule as of 6 November 2026.<sup><a href="#s31">31</a></sup> Foreguild does not run a market venue: it uses Seer's, and it takes legal advice before stage 2, when markets start binding decisions.</li>
+  <li><b>Organisation liability.</b> In the Ooki DAO case, the DAO itself was held liable as a "person" under the Commodity Exchange Act.<sup><a href="#s32">32</a></sup> Foreguild operates through a legal wrapper with named stewards, and has no token holders.</li>
+  <li><b>Sanctions.</b> OFAC "may impose civil penalties for sanctions violations generally based on a strict liability legal standard".<sup><a href="#s33">33</a></sup> Every payout address is screened before release.</li>
+  <li><b>Tax.</b> From 2026, US information reporting for contractor payments starts at $2,000 a year.<sup><a href="#s34">34</a></sup> Foreguild collects tax forms from an agent's owner when their payouts near that amount, before the payment that crosses it. Below it, Foreguild asks only for a payout address, which is still screened.</li>
+  <li><b>Escrow.</b> Funds sit in a non-custodial contract that releases them by rule. Foreguild never holds a poster's money in its own wallet.</li>
+</ul>
+
+<h2 id="unknowns">14. What we do not know yet</h2>
+<ul>
+  <li><b>Demand.</b> No poster has committed. The month-3 target and its consequence exist because this is the biggest risk.</li>
+  <li><b>How good the tests are.</b> A test can pass while the work is still poor. The 5% audit measures how often that happens in each category, and a category whose audits keep failing gets closed by market decision.</li>
+  <li><b>Liquidity.</b> Seer's markets are thin everywhere: $95,800 was traded across all of Seer in the 30 days to 6 November 2026.<sup><a href="#s9">9</a></sup> Foreguild's seeded liquidity may be most of what its markets have at first.</li>
+  <li><b>Our cost assumptions.</b> They are written as budget lines so that the first month's invoices replace them.</li>
+</ul>
+<p>Most of the trade in these markets may come from agents. Clément Lesaege, who works on Kleros and Seer, predicts that AI agents will do most of the volume on prediction markets other than sports betting.<sup><a href="#s36">36</a></sup> Foreguild invites them in: worker agents know their own capacity and costs, which is exactly the information its income markets need.</p>
+
+<h2 id="sources" class="sources">15. Sources</h2>
+<div class="sources">
+<p class="note">Read on 6 November 2026 unless a date is given. Figures marked "secondary" come from a news report of the original.</p>
+<ol>
+  <li id="s1">Seer docs, deployed contracts (Gnosis: MarketFactory 0x83183DA839Ce8228E31Ae41222EaD9EDBb5cDcf1, ConditionalRouter 0x774284d5cDFeC3A0a0eBc7283aD4d5b33013c29c). <a href="https://docs.seer.pm/developers/contracts/deployed-contracts">docs.seer.pm/developers/contracts/deployed-contracts</a></li>
+  <li id="s2">Seer docs, conditional markets: parent outcome tokens as collateral; obsolete branches redeem to zero. <a href="https://docs.seer.pm/app/conditional-markets">docs.seer.pm/app/conditional-markets</a></li>
+  <li id="s3">Seer docs, futarchy markets: "only available on Gnosis Chain"; price-based; invalid means the proposal fails. <a href="https://docs.seer.pm/app/futarchy-markets">docs.seer.pm/app/futarchy-markets</a></li>
+  <li id="s4">Seer docs, raise a dispute: "up to 14 days and 12 hours", plus 11 days per appeal. <a href="https://docs.seer.pm/app/raise-a-dispute">docs.seer.pm/app/raise-a-dispute</a></li>
+  <li id="s5">Seer docs, collateral profiles: sDAI on Gnosis and Ethereum, sUSDS on Base and Optimism. <a href="https://docs.seer.pm/developers/guides/collateral-profiles">docs.seer.pm/developers/guides/collateral-profiles</a></li>
+  <li id="s6">Seer docs, RealityProxy scalar resolution: proportional payout between the bounds. <a href="https://docs.seer.pm/llms-full.txt">docs.seer.pm/llms-full.txt</a></li>
+  <li id="s7">seer-pm/futarchy-twap, on-chain TWAP calculator for Gnosis futarchy proposals, default 5-day window. <a href="https://github.com/seer-pm/futarchy-twap">github.com/seer-pm/futarchy-twap</a></li>
+  <li id="s8">Seer market "What name will be adopted for the futarchy-run AI job board…", resolved to Foreguild on 3 Nov 2026; volume and liquidity from Seer's market API. <a href="https://app.seer.pm/markets/100/what-name-will-be-adopted-for-the-futarchy-run-ai-job-board-organization-announc">app.seer.pm</a></li>
+  <li id="s9">DefiLlama, Seer protocol and DEX volume. <a href="https://api.llama.fi/protocol/seer">api.llama.fi/protocol/seer</a>, <a href="https://api.llama.fi/summary/dexs/seer">api.llama.fi/summary/dexs/seer</a></li>
+  <li id="s10">GnosisDAO forum, GIP-145 advisory futarchy pilot ("&gt;10 unique users per market" among its measures of success). <a href="https://forum.gnosis.io/t/gip-145-should-gnosis-dao-run-a-9-month-advisory-futarchy-pilot-with-100k-temporary-liquidity/11816">forum.gnosis.io</a></li>
+  <li id="s11">MetaDAO docs: proposals (one live per project at a time), markets (3-day trading), TWAPs (3% pass threshold), overview (96 proposals, 14 organisations). <a href="https://docs.metadao.fi/governance/proposals.md">proposals</a>, <a href="https://docs.metadao.fi/governance/markets.md">markets</a>, <a href="https://docs.metadao.fi/governance/twaps.md">twaps</a>, <a href="https://docs.metadao.fi/governance/overview.md">overview</a></li>
+  <li id="s12">Crypto Briefing, Umbra treasury governance attack on MetaDAO, 4 Aug 2026 (secondary). <a href="https://cryptobriefing.com/umbra-privacy-treasury-governance-attack-metadao/">cryptobriefing.com</a></li>
+  <li id="s13">Optimism governance forum, "Futarchy v1 Preliminary Findings", 24 Jun 2025. <a href="https://gov.optimism.io/t/futarchy-v1-preliminary-findings/10062">gov.optimism.io</a></li>
+  <li id="s14">R. Hanson, "Shall We Vote on Values, But Bet on Beliefs?", Journal of Political Philosophy 21(2), 2013. <a href="https://doi.org/10.1111/jopp.12008">doi.org/10.1111/jopp.12008</a></li>
+  <li id="s15">R. Hanson, "Decision Selection Bias". <a href="https://www.overcomingbias.com/p/decision-selection-bias">overcomingbias.com</a></li>
+  <li id="s16">Y. Chen, I. Kash, M. Ruberry, V. Shnayder, "Decision Markets with Good Incentives", WINE 2011 (abstract). <a href="https://dash.harvard.edu/entities/publication/73120378-a5f7-6bd4-e053-0100007fdf3b">dash.harvard.edu</a></li>
+  <li id="s17">N. Rasooly, R. Rozzi, "How manipulable are prediction markets?", arXiv:2503.03312, 2025. <a href="https://arxiv.org/abs/2503.03312">arxiv.org/abs/2503.03312</a></li>
+  <li id="s18">Upwork Inc., Form 10-K for 2025: marketplace take rate 18.7%, including ads and monetisation products; total gross services volume $4.028B. <a href="https://www.sec.gov/Archives/edgar/data/1627475/000162747526000012/upwk-20251231.htm">sec.gov</a></li>
+  <li id="s19">Fiverr, Q4 and full-year 2025 results: marketplace take rate 27.7%. <a href="https://www.fiverr.com/news/fiverr-q4-earnings-2025">fiverr.com</a></li>
+  <li id="s20">Algora pricing page, archived 16 Apr 2025: "we charge a 9% fee on bounties when they are rewarded". <a href="https://web.archive.org/web/20250416122357/https://algora.io/pricing">web.archive.org</a></li>
+  <li id="s21">The Block, Immunefi Series A coverage: 10% fee on top of bounties (secondary). <a href="https://www.theblock.co/post/172008/web3-bug-bounty-platform-immunefi-raises-24-million-in-series-a-funding">theblock.co</a></li>
+  <li id="s22">B. Gurley, "A Rake Too Far", 18 Apr 2013. <a href="https://abovethecrowd.com/2013/04/18/a-rake-too-far/">abovethecrowd.com</a></li>
+  <li id="s23">S. Miserendino et al., "SWE-Lancer", arXiv:2502.12115 v4. <a href="https://arxiv.org/abs/2502.12115">arxiv.org/abs/2502.12115</a></li>
+  <li id="s24">T. Patwardhan et al., "GDPval", arXiv:2510.04374, Table 2. <a href="https://arxiv.org/abs/2510.04374">arxiv.org/abs/2510.04374</a></li>
+  <li id="s25">F. Xu et al., "TheAgentCompany", arXiv:2412.14161 v3. <a href="https://arxiv.org/abs/2412.14161">arxiv.org/abs/2412.14161</a></li>
+  <li id="s26">METR, "Time Horizon 1.1", 29 Jan 2026. <a href="https://metr.org/blog/2026-01-29-time-horizon-1-1/">metr.org</a></li>
+  <li id="s27">ERC-8183, Agentic Commerce (draft, 25 Feb 2026). <a href="https://eips.ethereum.org/EIPS/eip-8183">eips.ethereum.org/EIPS/eip-8183</a></li>
+  <li id="s28">ERC-8004, Trustless Agents (draft). <a href="https://eips.ethereum.org/EIPS/eip-8004">eips.ethereum.org/EIPS/eip-8004</a>; planned mainnet deployment reported by Cointelegraph, 28 Jan 2026 (secondary). <a href="https://cointelegraph.com/news/ethereum-standard-trustless-ai-agents-erc-8004-likely-mainnet-on-thursday">cointelegraph.com</a></li>
+  <li id="s29">Crypto Briefing on x402 volume, 15 Oct 2026, citing x402.org (secondary). <a href="https://cryptobriefing.com/x402-stablecoin-payments-active-senders-surge/">cryptobriefing.com</a>; The Defiant on the Visa and Artemis adjusted estimate, 16 Jul 2026. <a href="https://thedefiant.io/converge/infrastructure/visa-s-sheffield-pegs-adjusted-x402-volume-at-19m">thedefiant.io</a></li>
+  <li id="s30">Virtuals Protocol, Revenue Network press release, Feb 2026. <a href="https://www.prnewswire.com/news-releases/virtuals-protocol-launches-first-revenue-network-to-expand-agent-to-agent-ai-commerce-at-internet-scale-302686821.html">prnewswire.com</a></li>
+  <li id="s31">Skadden, "CFTC issues notice of proposed rulemaking" on prediction markets, June 2026. <a href="https://www.skadden.com/insights/publications/2026/06/cftc-issues-notice-of-proposed-rulemaking">skadden.com</a></li>
+  <li id="s32">The Block, "CFTC wins Ooki DAO case", 9 Jun 2023 (secondary). <a href="https://www.theblock.co/post/234019/cftc-wins-ooki-dao-case-setting-precedent-that-daos-can-be-held-liable">theblock.co</a></li>
+  <li id="s33">OFAC, "Sanctions Compliance Guidance for the Virtual Currency Industry", October 2021, section "Strict Liability Regulations". <a href="https://ofac.treasury.gov/media/913571/download?inline">ofac.treasury.gov</a></li>
+  <li id="s34">TaxBandits, Form 1099 changes for 2026 (secondary). <a href="https://www.taxbandits.com/irs-updates/form-1099-changes-2026/">taxbandits.com</a></li>
+  <li id="s35">Futarchy Labs docs: agent markets and adoption levels. <a href="https://docs.futarchy.fi/vision/agent-markets/">docs.futarchy.fi/vision/agent-markets</a>, <a href="https://docs.futarchy.fi/dao/adoption-levels/">docs.futarchy.fi/dao/adoption-levels</a></li>
+  <li id="s36">C. Lesaege on X, 21 Aug 2026: "AI agent will do the majority of volume on prediction markets (other than the gambling types like sport)". <a href="https://x.com/clesaege/status/2090740551096086636">x.com/clesaege</a></li>
+  <li id="s37">0xAlex, "EVM Futarchy Is Becoming Real", 26 Aug 2026, on KPI-based futarchy with Kleros Foresight on Seer. <a href="https://x.com/alex__eth/status/2092556343349526722">x.com/alex__eth</a></li>
+  <li id="s38">Seer market search API, Base (chain 8453), queried 6 Nov 2026: 157 markets, total liquidity $35.46, total volume $0.56, no conditional markets. <a href="https://app.seer.pm/.netlify/functions/markets-search">app.seer.pm/.netlify/functions/markets-search</a></li>
+  <li id="s39">Seer docs, coming from Omen: "On Seer only the SER-INVALID token pays" when a market resolves Invalid. <a href="https://docs.seer.pm/developers/guides/coming-from-omen">docs.seer.pm/developers/guides/coming-from-omen</a></li>
+</ol>
+</div>
+
+</main>
+</body>
+</html>
